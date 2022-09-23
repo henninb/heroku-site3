@@ -1,11 +1,10 @@
 #!/bin/sh
 
-if [ ! -x "$(command -v node)" ]; then
-  echo "Please install node"
-  exit 1
-fi
+pip install -r requirements.txt
 
-npm install
-npm start
+export FLASK_ENV=development
+export FLASK_APP=app.py
+
+flask run
 
 exit 0
